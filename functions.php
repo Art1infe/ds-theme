@@ -7,4 +7,18 @@ function mytheme_enqueue_asstes(){
 
     
 }
+
+add_action('wp_enqueue_scripts', 'mytheme_enqueue_assets');
+
+function ds_setup(){
+    add_theme_support('menus');
+    register_nav_menu('primary', 'Primary Navigation');
+
+}
+
+add_action('init', 'ds_setup');
+
+wp_nav_menu(array('theme_location' => 'primary'));
 ?>
+
+
